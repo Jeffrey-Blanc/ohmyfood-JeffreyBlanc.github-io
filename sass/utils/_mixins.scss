@@ -1,0 +1,32 @@
+@mixin parameter_flex($direction: $direction, $justify-content: $justify-content, $align-items: $align-items){
+    display: flex;
+    @if($direction == row) {
+        @if($justify-content == normal){
+            align-items: $align-items;
+        }
+        @else {
+            @if($justify-content != normal and $align-items == normal){
+                justify-content: $justify-content; 
+            }
+            @else {
+                justify-content: $justify-content;
+                align-items: $align-items;
+            }
+        }
+    }
+    @else {
+        flex-direction: $direction;
+        @if($align-items != normal and $justify-content == normal){
+            align-items: $align-items;
+        }
+        @else {
+            @if($justify-content != normal and $align-items == normal){
+                justify-content: $justify-content; 
+            }
+            @if($justify-content != normal and $align-items != normal) {
+                justify-content: $justify-content;
+                align-items: $align-items;
+            }
+        }
+    }
+}

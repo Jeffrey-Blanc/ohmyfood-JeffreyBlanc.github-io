@@ -1,0 +1,18 @@
+.btn {
+  margin: 10px auto;
+  padding: 15px;
+  font-size: 1.2em;
+  color: #FFF;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(to bottom right, $color-secondary, $color-primary);
+  box-shadow: 0px 0px 15px 0px rgb(0 0 0 / 30%);
+  &:hover {
+    filter: brightness(1.10);
+    box-shadow: 0px 0px 15px 2px rgb(0 0 0 / 30%);
+  }
+  &--flattened {
+    width: 50%;
+    max-width: 215px;
+  }
+}

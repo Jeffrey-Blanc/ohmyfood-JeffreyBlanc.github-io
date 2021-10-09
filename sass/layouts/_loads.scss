@@ -1,0 +1,65 @@
+.conteneur-loads {
+  background: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  animation: anim_load_bg 1000ms forwards;
+  animation-delay: 2000ms;
+}
+
+.loads {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 5rem;
+  font-weight: bold;
+  &__loading {
+    font-family: $font_logo_title;
+    animation: anim_load 900ms;
+    &--1 {
+      color: $color-primary;
+      animation-delay: 300ms;
+    }
+    &--2 {
+      color: $color-secondary;
+      animation-delay: 600ms;
+    }
+    &--3 {
+      color: $color-tertiary;
+      animation-delay: 900ms
+    }
+  }
+}
+
+@keyframes anim_load {
+  0% {
+    transform: translateY(-30px);
+  }
+  25%{
+    transform: translateY(30px);
+  }
+  50%{
+    transform: translateY(-30px)
+  }
+  75%{
+    transform: translateY(30px);
+  }
+  100% {
+    transition: translateY(0px);
+  }
+}
+
+@keyframes anim_load_bg {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -9;
+  }
+}

@@ -1,0 +1,79 @@
+.restaurant {
+  padding: 20px 20px;
+  background: $color-gray;
+  &__title {
+    // margin: 10px 0;
+    max-width: 1400px;
+    margin: auto;
+  }
+}
+
+.container_cards_restaurant {
+  max-width: 1400px;
+  margin: auto;
+  display: flex;
+  // flex-direction: initial;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+@media screen and (min-width: 700px) {
+  .container_cards_restaurant{
+    flex-direction: row;
+  } 
+}
+
+.link-card {
+  display: flex;
+  width: 100%;
+  margin: 1.5em 0;
+  border-radius: 15px;
+  box-shadow: 0px 3px 10px darken($color-gray, 20%);
+}
+@media screen and (min-width: 700px) {
+  .link-card{
+    width: 45%;
+  } 
+}
+
+.figure-card {
+  position: relative;
+  @include parameter_flex(column, $justify-content, $align-items);
+  // margin: auto;
+  width: 100%;
+  &__img {
+    /*width: 100%;*/
+    border-radius: 15px 15px 0 0;
+    /*max-width: 335px;*/
+    max-height: 225px;
+    /*width: 335px;*/
+    object-fit: cover;
+  }
+  &__new {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 5px 15px;
+    color: darken($color-tertiary, 40%);
+    font-weight: bold;
+    background: $color-tertiary;
+    border-radius: 2px;
+  }
+}
+
+.figcaption-card {
+  @include parameter_flex(column, center, $align-items);
+  padding: 1rem;
+  background: #FFF;
+  border-radius: 0 0 15px 15px;
+  &__title {
+    font-size: 1.3rem;
+  }
+  &__text{
+    font-size: 1.2rem;
+  }
+  &__icon {
+    position: absolute;
+    right: 15px;
+    font-size: 1.5em;
+  }
+}

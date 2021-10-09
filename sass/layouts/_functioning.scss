@@ -1,0 +1,76 @@
+.functioning {
+  padding: 20px 20px;
+  &__title{
+    max-width: 1400px;
+    margin: auto;
+  }
+}
+
+.functioning-list{
+  @include parameter_flex(column, center, center);
+  font-size: 1.2em;
+  max-width: 1400px;
+  margin: auto;
+  flex-wrap: wrap;
+  padding: 0 15px;
+}
+@media screen and (min-width: 700px) {
+  .functioning-list{
+      flex-direction: row;
+  }
+}
+
+.bullet-list{
+  @include parameter_flex($direction, $justify-content, center);/*justify-content par center*/
+  position: relative;
+  width: 100%;
+  background: $color-gray;
+  margin: 10px 0;
+  padding: 25px 0;
+  border-radius: 15px;
+  box-shadow: 0px 3px 10px darken($color-gray, 20%);
+  &::before{
+    @include parameter_flex($direction, center, center);
+    background: $color-primary;
+    color: #FFF;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 0.8em;
+    position: absolute;
+    left: -15px;
+  }
+  &:hover{
+    background: lighten($color-primary, 35%);
+    & .bullet-list__icon--color {
+      color: $color-primary;
+    }
+  }
+  &--01::before{
+    content: "1";
+  }
+  &--02::before{
+    content: "2";
+  }
+  &--03::before{
+    content: "3";
+  }
+  &__icon {
+    @include parameter_flex($direction, center, center);
+    width: 1rem;
+    margin: 0 2rem;
+    font-size: 1.2em;
+    color: darken($color-gray, 40%);
+  }
+  &__text {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+}
+@media screen and (min-width: 700px) {
+  .bullet-list{
+      width: 45%;
+      min-width: 310px;
+      margin: 1rem;
+  }
+}

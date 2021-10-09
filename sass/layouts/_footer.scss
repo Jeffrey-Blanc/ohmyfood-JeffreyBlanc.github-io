@@ -1,0 +1,31 @@
+.footer {
+  background: #353535;
+  color: #FFF;
+  padding: 20px 20px;
+  li {
+    margin: 5px 0;
+  }
+  .fas {
+    margin-right: 0.5rem;
+    width: 1rem;
+    font-size: 0.7em;
+  }
+  &__title {
+    font-family: $font_logo_title, sans-serif;
+    font-weight: normal;
+    font-size: 1em;
+    max-width: 1400px;
+    margin: auto;
+    padding: 0 20px;
+  }
+}
+
+.footer_conteneurList {
+  max-width: 1400px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.fas.fa-hands-helping {
+  transform: rotate(-10deg);
+}

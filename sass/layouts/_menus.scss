@@ -1,0 +1,156 @@
+.main_menu {
+    background: $color-gray;
+}
+
+.menu {
+    @include parameter_flex(column, $justify-content, $align-items);
+    position: relative;
+    top: -50px;
+    background: $color-gray;
+    border-radius: 30px;
+    padding: 15px 0;
+}
+
+.menu_title {
+    @include parameter_flex($direction, center, center);
+    padding: 0 20px;
+    font-family: $font_logo_title, sans-serif;
+    max-width: 1400px;
+    align-self: center;
+    width: 100%;
+    margin: auto;
+    &__icon {
+        margin: 0 0 0 auto;
+        cursor: pointer;
+    }
+}
+
+.container_cards_menu {
+    display: flex;
+    flex-direction: initial;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    padding: 15px 20px;
+}
+@media screen and (min-width: 700px) {
+    .container_cards_menu{
+        flex-direction: row;
+        align-self: center;
+        align-items: flex-start;
+        margin: auto;
+    }
+}
+
+.cardMenu {
+    width: 100%;
+    &__title {
+        font-weight: normal;
+    }
+    &__separator {
+    width: 50px;
+    height: 0.3rem;
+    background: $color-tertiary;
+    border: none;
+    margin: 5px 0;
+    }
+    &--center{
+        width: 100%;
+        @include parameter_flex($direction, center, $align-items);
+        align-self: center;
+    }
+}
+@media screen and (min-width: 700px) {
+    .cardMenu{
+        width: 45%;
+        &--center{
+            width: 45%;
+        }
+    }
+}
+
+.cardList {
+    @include parameter_flex($direction, space-between, $align-items);
+    background: #FFF;
+    border-radius: 1rem;
+    margin: 1rem 0;
+    overflow: hidden;
+    box-shadow: 0px 3px 10px darken($color-gray, 20%);
+    cursor: pointer;
+    animation: anim_cardList 1000ms backwards cubic-bezier(.25,.1,.61,1);
+    @for $i from 1 through 10 {
+        &--#{$i}  {
+            animation-delay: 200ms * $i;
+        }
+    }
+    &:hover .cardInformation__price{
+        transform: translate(-80px, 0px);
+    }
+    &:hover .cardInformation--check{
+        transform: translateX(0%);
+        opacity: 1;
+    }
+    &:hover .fa-check-circle {
+        transform: rotate(360deg);
+        opacity: 1;
+    }
+}
+
+.fa-check-circle {
+    transform: rotate(90deg);
+    transition: transform 650ms ease-in-out;
+    opacity: 0;
+}
+
+@keyframes anim_cardList {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.cardName {
+    padding: 1rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    &__title {
+        font-size: 1.1rem;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    &__text {
+        font-size: 0.9rem;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+}
+
+.cardInformation {
+    @include parameter_flex($direction, $justify-content, $align-items);
+    &__price {
+    align-self: flex-end;
+    padding: 1rem;
+    position: relative;
+    left: 80px;
+    font-weight: bold;
+    transition: transform 650ms ease-in-out;
+    }
+    &--check {
+        @include parameter_flex($direction, center, center);
+        width: 5rem;
+        height: 100%;
+        background: $color-tertiary;
+        color: white;
+        font-size: 1.2em;
+        border-radius: 0 1rem 1rem 0;
+        opacity: 0;
+        transform: translateX(100%);
+        transition: transform 650ms ease-in-out;
+    }
+}

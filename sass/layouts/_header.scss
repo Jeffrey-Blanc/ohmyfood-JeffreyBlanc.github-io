@@ -1,0 +1,45 @@
+.header {
+  @include parameter_flex(column, $justify-content, center);
+  &__img {
+    width: 100%;
+    /*max-width: 425px;*/
+    max-height: 285px;
+    object-fit: cover;
+  }
+}
+
+.localisation{
+  @include parameter_flex($direction, center, $align-items);
+  width: 100%;
+  padding: $padding-horizontale;
+  background: darken($color-gray, 5%);
+  &__icon {
+    font-size: 1.2rem;
+    margin-right: 1rem;
+  }
+  &__txt{
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+}
+
+
+.welcome {
+  @include parameter_flex(column, center, center);
+  width: 100%;
+  padding: $padding-horizontale;
+  background: $color-gray;
+  &__title{
+    width: 100%;
+    margin: 10px;
+    text-align: center;
+    font-size: 1.7rem;
+  }
+  &__text{
+    // color: lighten(#000, 40%);
+    width: 100%;
+    margin: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+}
