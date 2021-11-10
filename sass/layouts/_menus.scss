@@ -132,7 +132,7 @@
 }
 
 .cardInformation {
-    @include parameter_flex($direction, $justify-content, $align-items);
+    display: flex;
     &__price {
     align-self: flex-end;
     padding: 1rem;

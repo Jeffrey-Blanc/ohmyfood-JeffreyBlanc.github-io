@@ -29,7 +29,7 @@ li {
   background: linear-gradient(190deg, #9356DC 10%, #FF79DA 90%);
   background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: transparent;
   font-weight: bold;
 }
 
@@ -104,7 +104,7 @@ li {
     transform: translateY(30px);
   }
   100% {
-    transition: translateY(0px);
+    transform: translateY(0px);
   }
 }
 @keyframes anim_load_bg {
@@ -330,7 +330,6 @@ li {
 
 .cardInformation {
   display: flex;
-  align-items: "normal";
 }
 .cardInformation__price {
   align-self: flex-end;

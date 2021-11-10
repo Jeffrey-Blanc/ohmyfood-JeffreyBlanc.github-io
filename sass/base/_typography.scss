@@ -26,6 +26,7 @@ li {
   background: linear-gradient(190deg, $color-primary 10%, $color-secondary 90%);
   background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  // -webkit-text-fill-color: transparent;
+  color: transparent;
   font-weight: bold;
 }
